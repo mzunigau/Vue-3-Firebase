@@ -14,14 +14,24 @@
     <h1>Hello, Vue Basics</h1>
 
     <div id="app">
-        <h2>{{title}}</h2>
-        <p>{{ author}}</p>
-        <p>{{age}}</p>
+        <div v-if="show">
+            <h2>{{title}}</h2>
+            <p>{{ author}}</p>
+            <p>{{age}}</p>
 
-        <button v-on:click="age++">Increase age</button>
-        <button v-on:click="age--">Decrease age</button>
+            <button v-on:click="age++">Increase age</button>
+            <button v-on:click="age--">Decrease age</button>
 
-        <div @click="changeTitle('Rock God')"> Change title</div>
+            <div @click="changeTitle('Rock God')"> Change title</div>
+
+
+        </div>
+        <button v-on:click="toggleShow">
+            <span v-if="show">Hide Artist</span>
+            <span v-else>Show Artist</span>
+        </button>
+
+        <div v-show="show">Showing artists</div>
     </div>
 
     <script src="app.js"></script>
