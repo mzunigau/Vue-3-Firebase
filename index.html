@@ -6,17 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/vue@3"></script>
-    <title>Document</title>
+    <title>Vue Basics</title>
 
 </head>
 
 <body>
-    <h1>Hello, Vue</h1>
+    <h1>Hello, Vue Basics</h1>
 
     <div id="app">
         <h2>{{title}}</h2>
         <p>{{ author}}</p>
         <p>{{age}}</p>
+
+        <button v-on:click="age++">Increase age</button>
+        <button v-on:click="age--">Decrease age</button>
+
+        <div @click="changeTitle('Rock God')"> Change title</div>
     </div>
 
     <script src="app.js"></script>
