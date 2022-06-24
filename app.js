@@ -6,7 +6,9 @@ const app = Vue.createApp({
             title: 'Artist',
             author: 'Freddy',
             age: 45,
-            show: true
+            show: true,
+            x: 0,
+            y: 0
         };
     },
     methods: {
@@ -15,6 +17,17 @@ const app = Vue.createApp({
         },
         toggleShow() {
             this.show = !this.show;
+        },
+        handleEvent(e, data) {
+            console.log(e, e.type);
+            if (data) {
+                console.log(data);
+            }
+        },
+        handleMousemove(e) {
+            this.x = e.offsetX;
+            this.y = e.offsetY;
+
         }
     }
 });

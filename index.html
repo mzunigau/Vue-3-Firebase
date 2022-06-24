@@ -6,6 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        .box {
+            padding: 100px;
+            width: 400px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
     <title>Vue Basics</title>
 
 </head>
@@ -32,6 +42,12 @@
         </button>
 
         <div v-show="show">Showing artists</div>
+
+        <!-- Mouse events -->
+        <div class="box" @mouseover="handleEvent($event, 5)"> mouseover (enter)</div>
+        <div class="box" @mouseleave="handleEvent"> mouseleave</div>
+        <div class="box" @dblclick="handleEvent"> double click</div>
+        <div class="box" @mousemove="handleMousemove"> position x:{{x}} position y:{{y}}</div>
     </div>
 
     <script src="app.js"></script>
